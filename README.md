@@ -292,9 +292,5 @@ Business Analyst | Data Analyst | Power BI Developer
 
 ### Connect With Me
 
-* LinkedIn: https://linkedin.com/in/your-profile
-* GitHub: https://github.com/your-username
-
----
-
-⭐ If you found this project useful, consider giving it a star.
+* LinkedIn: www.linkedin.com/in/tope-aroninuola-064531237
+* GitHub: https://github.com/Brightprof
