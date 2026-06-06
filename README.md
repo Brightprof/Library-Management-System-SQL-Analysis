@@ -1,6 +1,6 @@
-📚 Library Management System | SQL Project
+#📚 Library Management System | SQL Project
 
-📖 Project Overview
+#📖 Project Overview
 
 The Library Management System is a SQL-based database project designed to manage and analyze library operations efficiently. The system tracks books, members, employees, branches, book issuance, and returns while providing insights into library performance through analytical SQL queries.
 
@@ -8,7 +8,7 @@ This project demonstrates end-to-end SQL development skills, including database 
 
 ---
 
-🎯 Project Objectives
+#🎯 Project Objectives
 
 The primary objectives of this project are to:
 
@@ -22,11 +22,11 @@ The primary objectives of this project are to:
 
 ---
 
-🗂 Database Schema
+#🗂 Database Schema
 
 The database consists of six interconnected tables:
 
-Books
+##Books
 
 Stores information about books available in the library.
 
@@ -39,16 +39,16 @@ status| Availability status
 author| Book author
 publisher| Publisher name
 
-Branch
+##Branch
 
 Stores library branch information.
 
-Employees
+##Employees
 
 Stores employee records and branch assignments.
 
 Members
-
+##
 Stores registered library members.
 
 Issued_Status
@@ -61,11 +61,11 @@ Tracks returned books.
 
 ---
 
-🔗 Entity Relationship Diagram (ERD)
+##🔗 Entity Relationship Diagram (ERD)
 
 "Library ERD" (screenshots/erd.png)
 
-Key Relationships
+##Key Relationships
 
 - One Branch can have multiple Employees.
 - One Employee can process multiple Book Issues.
@@ -76,7 +76,7 @@ Key Relationships
 
 ---
 
-🛠 Tools & Technologies
+##🛠 Tools & Technologies
 
 - SQL Server
 - SQL Server Management Studio (SSMS)
@@ -85,7 +85,7 @@ Key Relationships
 
 ---
 
-📂 Project Structure
+##📂 Project Structure
 
 Library-Management-System/
 │
@@ -107,7 +107,7 @@ Library-Management-System/
 │   └── 07_advanced_analytics.sql
 │
 ├── screenshots/
-│   |
+│
 │   ├── branch_report.png
 │   ├── overdue_books.png
 │   ├── revenue_analysis.png
@@ -117,9 +117,9 @@ Library-Management-System/
 
 ---
 
-📌 SQL Concepts Demonstrated
+#📌 SQL Concepts Demonstrated
 
-Database Design
+##Database Design
 
 - CREATE DATABASE
 - CREATE TABLE
@@ -127,14 +127,14 @@ Database Design
 - Foreign Keys
 - Referential Integrity
 
-Data Manipulation
+##Data Manipulation
 
 - INSERT
 - UPDATE
 - DELETE
 - SELECT
 
-Data Analysis
+##Data Analysis
 
 - GROUP BY
 - HAVING
@@ -144,7 +144,7 @@ Data Analysis
 - EXISTS
 - Date Functions
 
-Advanced SQL
+##Advanced SQL
 
 - Stored Procedures
 - CTAS (Create Table As Select)
@@ -153,7 +153,7 @@ Advanced SQL
 
 ---
 
-📊 Business Questions Solved
+## 📊 Business Questions Solved
 
 CRUD Operations
 
@@ -179,7 +179,7 @@ Found members who borrowed more than one book.
 
 ---
 
-Reporting & Analysis
+## Reporting & Analysis
 
 6. Book Issue Summary
 
@@ -211,7 +211,7 @@ Identified books currently on loan.
 
 ---
 
-Advanced Analytics
+## Advanced Analytics
 
 13. Overdue Books Detection
 
@@ -285,7 +285,7 @@ Business Analyst | Data Analyst | Power BI Developer
 
 📧 Email: topearoninuola@gmail.com
 
-💼 LinkedIn: https://linkedin.com/in/tope-aroninuola
+💼 Linkdln: https://www.linkedin.com/in/tope-aroninuola-064531237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
 💻 GitHub: https://github.com/Brightprof
 
