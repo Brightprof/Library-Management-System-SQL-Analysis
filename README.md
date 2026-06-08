@@ -1,92 +1,131 @@
-#📚 Library Management System | SQL Project
+# 📚 Library Management System SQL Project
 
-#📖 Project Overview
+## 📖 Project Overview
 
-The Library Management System is a SQL-based database project designed to manage and analyze library operations efficiently. The system tracks books, members, employees, branches, book issuance, and returns while providing insights into library performance through analytical SQL queries.
+The Library Management System is a SQL Server database project designed to streamline library operations by managing books, members, employees, branches, book issuance, and return transactions.
 
-This project demonstrates end-to-end SQL development skills, including database design, data manipulation, reporting, stored procedures, and business analysis.
+Beyond database design, this project leverages SQL for business analysis, reporting, and operational insights, making it a practical demonstration of real-world database management and data analytics skills.
+
+## 🎯 Project Objectives
+
+This project aims to:
+
+* Design a relational database for library operations.
+* Manage book inventory and availability.
+* Track member registrations and borrowing activities.
+* Record book issuance and return transactions.
+* Generate branch-level performance reports.
+* Identify overdue books and calculate fines.
+* Automate library processes using stored procedures.
+* Apply SQL analytical techniques to solve business problems.
 
 ---
 
-#🎯 Project Objectives
+## 🛠 Tools & Technologies
 
-The primary objectives of this project are to:
-
-- Design a relational database for library operations.
-- Manage book inventory and availability.
-- Track book borrowing and return transactions.
-- Monitor member registration and activity.
-- Analyze rental revenue and branch performance.
-- Identify overdue books and calculate fines.
-- Automate library processes using stored procedures.
+* SQL Server
+* SQL Server Management Studio (SSMS)
+* GitHub
 
 ---
 
-#🗂 Database Schema
+## 🗄 Database Schema
 
 The database consists of six interconnected tables:
 
-##Books
+### 1. Books
 
 Stores information about books available in the library.
 
-Column| Description
-isbn| Unique book identifier
-book_title| Book title
-category| Book category
-rental_price| Rental fee
-status| Availability status
-author| Book author
-publisher| Publisher name
+| Column       | Description            |
+| ------------ | ---------------------- |
+| isbn         | Unique book identifier |
+| book_title   | Book title             |
+| category     | Book category          |
+| rental_price | Book rental fee        |
+| status       | Availability status    |
+| author       | Author name            |
+| publisher    | Publisher name         |
 
-##Branch
+### 2. Branch
 
-Stores library branch information.
+Stores branch information.
 
-##Employees
+| Column         | Description       |
+| -------------- | ----------------- |
+| branch_id      | Branch ID         |
+| manager_id     | Branch Manager ID |
+| branch_address | Branch location   |
+| contact_no     | Contact number    |
 
-Stores employee records and branch assignments.
+### 3. Employees
 
-Members
-##
+Stores employee records.
+
+| Column    | Description     |
+| --------- | --------------- |
+| emp_id    | Employee ID     |
+| emp_name  | Employee name   |
+| position  | Job role        |
+| salary    | Employee salary |
+| branch_id | Assigned branch |
+
+### 4. Members
+
 Stores registered library members.
 
-Issued_Status
+| Column         | Description       |
+| -------------- | ----------------- |
+| member_id      | Member ID         |
+| member_name    | Member name       |
+| member_address | Address           |
+| reg_date       | Registration date |
+
+### 5. Issued_Status
 
 Tracks books issued to members.
 
-Return_Status
+| Column           | Description                        |
+| ---------------- | ---------------------------------- |
+| issued_id        | Issue transaction ID               |
+| issued_member_id | Member who borrowed the book       |
+| issued_book_name | Book title                         |
+| issued_date      | Date issued                        |
+| issued_book_isbn | Book ISBN                          |
+| issued_emp_id    | Employee who processed transaction |
+
+### 6. Return_Status
 
 Tracks returned books.
 
----
-
-##🔗 Entity Relationship Diagram (ERD)
-
-"Library ERD" (screenshots/erd.png)
-
-##Key Relationships
-
-- One Branch can have multiple Employees.
-- One Employee can process multiple Book Issues.
-- One Member can borrow multiple Books.
-- One Book can be issued multiple times.
-- One Issued Transaction can have one Return Transaction.
-- One Book can have multiple Return Records.
+| Column           | Description               |
+| ---------------- | ------------------------- |
+| return_id        | Return transaction ID     |
+| issued_id        | Related issue transaction |
+| return_book_name | Returned book             |
+| return_date      | Return date               |
+| return_book_isbn | Book ISBN                 |
 
 ---
 
-##🛠 Tools & Technologies
+## 🔗 Entity Relationship Diagram (ERD)
 
-- SQL Server
-- SQL Server Management Studio (SSMS)
-- Git
-- GitHub
+The database follows a relational structure where:
+
+* One Branch manages many Employees.
+* One Employee processes many Book Issues.
+* One Member can borrow many Books.
+* One Book can be issued multiple times.
+* One Issued Transaction can have one corresponding Return Transaction.
+* One Book can have multiple return records.
+
+<img width="1536" height="1024" alt="Library management system ERD" src="https://github.com/user-attachments/assets/4a255c76-eccd-498e-b2ee-a1a9e576e690" />
 
 ---
 
-##📂 Project Structure
+## 📂 Project Structure
 
+```text
 Library-Management-System/
 │
 ├── dataset/
@@ -107,188 +146,191 @@ Library-Management-System/
 │   └── 07_advanced_analytics.sql
 │
 ├── screenshots/
-│
+│   ├── erd.png
+│   ├── Schema.png
 │   ├── branch_report.png
-│   ├── overdue_books.png
-│   ├── revenue_analysis.png
-│
+|   ├── overdue_books.png
+│   └── Book status update.png
 │
 └── README.md
+```
 
 ---
 
-#📌 SQL Concepts Demonstrated
+# 📌 SQL Concepts Demonstrated
 
-##Database Design
+### Database Design
 
-- CREATE DATABASE
-- CREATE TABLE
-- Primary Keys
-- Foreign Keys
-- Referential Integrity
+* CREATE DATABASE
+* CREATE TABLE
+* PRIMARY KEY
+* FOREIGN KEY
+* Relational Modeling
 
-##Data Manipulation
+### Data Manipulation
 
-- INSERT
-- UPDATE
-- DELETE
-- SELECT
+* INSERT
+* UPDATE
+* DELETE
+* SELECT
 
-##Data Analysis
+### Data Analysis
 
-- GROUP BY
-- HAVING
-- Aggregations
-- INNER JOIN
-- LEFT JOIN
-- EXISTS
-- Date Functions
+* GROUP BY
+* HAVING
+* COUNT
+* SUM
+* DATEDIFF
+* DATEADD
 
-##Advanced SQL
+### Joins
 
-- Stored Procedures
-- CTAS (Create Table As Select)
-- Conditional Logic
-- Error Handling (RAISERROR)
+* INNER JOIN
+* LEFT JOIN
 
----
+### Advanced SQL
 
-## 📊 Business Questions Solved
-
-CRUD Operations
-
-1. Add New Book Records
-
-Inserted new books into the library inventory.
-
-2. Update Member Information
-
-Modified existing member details.
-
-3. Delete Issued Records
-
-Removed specific issue records.
-
-4. Retrieve Books Issued by Employees
-
-Tracked books processed by individual employees.
-
-5. Identify Frequent Borrowers
-
-Found members who borrowed more than one book.
+* CTAS (Create Table As Select)
+* EXISTS
+* Stored Procedures
+* Error Handling using RAISERROR
 
 ---
 
-## Reporting & Analysis
+# 📊 Business Problems Solved
 
-6. Book Issue Summary
+### CRUD Operations
 
-Created a summary table showing how many times each book has been issued.
+✔ Add new books to the library inventory.
 
-7. Books by Category
+✔ Update member information.
 
-Retrieved books belonging to a specific category.
+✔ Delete obsolete issue records.
 
-8. Rental Revenue by Category
+✔ Retrieve books issued by specific employees.
 
-Calculated rental income generated from each category.
+✔ Identify members who borrowed multiple books.
 
-9. Recently Registered Members
+---
+
+### Reporting & Analysis
+
+### Book Issue Summary
+
+Created a summary table showing the number of times each book has been issued.
+
+### Rental Revenue Analysis
+
+Calculated total rental income generated by each book category.
+
+### Membership Analysis
 
 Identified members who registered within the last five years.
 
-10. Employee & Branch Reporting
+### Employee & Branch Reporting
 
-Displayed employees alongside their branch and manager details.
+Displayed employee information alongside branch and manager details.
 
-11. Premium Books Analysis
+### Premium Books Analysis
 
-Created a table containing books with rental prices greater than $5.
+Created a separate table containing books with rental prices above $5.
 
-12. Books Not Yet Returned
+### Outstanding Loans
 
-Identified books currently on loan.
-
----
-
-## Advanced Analytics
-
-13. Overdue Books Detection
-
-Identified overdue books based on a 30-day borrowing period.
-
-14. Automated Return Processing
-
-Developed a stored procedure to:
-
-- Record returned books
-- Update book availability
-- Generate confirmation messages
-
-15. Branch Performance Report
-
-Generated branch-level performance metrics including:
-
-- Number of books issued
-- Number of books returned
-- Total rental revenue
-
-16. Active Members Identification
-
-Created a table containing members who borrowed books within the last three months.
-
-17. Top Performing Employees
-
-Identified employees who processed the highest number of book issues.
-
-18. Automated Book Issuance Procedure
-
-Built a stored procedure that:
-
-- Verifies book availability
-- Updates book status
-- Prevents duplicate issuance
-
-19. Overdue Fines Analysis
-
-Calculated fines for overdue books at a rate of $0.50 per day.
+Retrieved books that have not yet been returned.
 
 ---
 
-📈 Key Insights
+### Advanced Analytics
 
-- Identified the most active library members.
-- Measured employee productivity.
-- Evaluated branch-level performance.
-- Tracked book demand and circulation.
-- Calculated rental revenue by category.
-- Detected overdue books and estimated fines.
-- Improved inventory visibility through automated status updates.
+### Overdue Books Detection
+
+Identified members with books overdue beyond the 30-day borrowing period.
+
+Output includes:
+
+* Member ID
+* Member Name
+* Book Title
+* Issue Date
+* Days Overdue
+
+### Automated Return Processing
+
+Developed a stored procedure that:
+
+* Records returned books.
+* Updates book availability.
+* Generates return confirmation messages.
+
+### Branch Performance Reporting
+
+Generated branch-level KPIs including:
+
+* Number of books issued
+* Number of books returned
+* Total rental revenue
+
+### Active Member Analysis
+
+Identified members who borrowed books within the last three months.
+
+### Employee Productivity Analysis
+
+Ranked the Top 3 employees based on the number of book issue transactions processed.
+
+### Automated Book Issuance Procedure
+
+Created a stored procedure that:
+
+* Checks book availability.
+* Updates book status automatically.
+* Prevents unavailable books from being issued.
+
+### Fine Calculation System
+
+Generated a report of overdue members and calculated fines at a rate of **$0.50 per overdue day**.
 
 ---
 
-🚀 Future Enhancements
+# 📈 Key Insights
 
-- Implement triggers for automated auditing.
-- Develop SQL views for reporting.
-- Build a Power BI dashboard connected to the database.
-- Add role-based access control.
-- Create a web-based front-end application.
+The analysis revealed:
+
+* Most active library members.
+* Top-performing employees.
+* Branches generating the highest rental activity.
+* Books with the highest circulation rates.
+* Members with overdue books and accumulated fines.
+* Revenue generated from book rentals across categories.
 
 ---
 
-👨‍💻 Author
+# 🚀 Future Improvements
 
-TOPE ARONINUOLA
+* Implement SQL Views for reporting.
+* Add database triggers for auditing.
+* Develop a Power BI dashboard.
+* Integrate a web application front-end.
+* Introduce role-based access control.
+* Add automated fine-payment tracking.
 
-Business Analyst | Data Analyst | Power BI Developer
+---
+
+## 👨‍💻 Author
+
+### TOPE ARONINUOLA
+
+**Business Analyst | Data Analyst | Power BI Developer**
 
 📧 Email: topearoninuola@gmail.com
 
-💼 Linkdln: https://www.linkedin.com/in/tope-aroninuola-064531237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+💼 LinkedIn: www.linkedin.com/in/tope-aroninuola-064531237
 
 💻 GitHub: https://github.com/Brightprof
 
 ---
 
-⭐ If you found this project useful, please consider giving it a star.
+## ⭐ Support
+
+If you found this project helpful or insightful, consider giving the repository a ⭐ on GitHub.
